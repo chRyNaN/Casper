@@ -35,6 +35,30 @@ body {
     background: var(--backgroundLightestColor);
 }
 
+.accent-one {
+    color: var(--accentOneColor);
+}
+
+.accent-two {
+    color: var(--accentTwoColor);
+}
+
+.accent-three {
+    color: var(--accentThreeColor);
+}
+
+.accent-one .focusable:hover {
+    color: var(--accentOneFocusedColor);
+}
+
+.accent-two .focusable:hover {
+    color: var(--accentTwoFocusedColor);
+}
+
+.accent-three .focusable:hover {
+    color: var(--accentThreeFocusedColor);
+}
+
 .img {
     display: block;
     width: 100%;
@@ -228,7 +252,7 @@ body {
 }
 
 .site-archive-header .no-image .site-description {
-    color: var(--primaryColor);
+    color: var(--textDarkSecondaryColor);
     opacity: 1.0;
 }
 
@@ -404,14 +428,15 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     bottom: 8px;
     left: 12px;
     height: 1px;
-    background: var(--backgroundLightestColor);
+    background: var(--textLightColor);
     opacity: 0.25;
     transition: all 0.35s ease-in-out;
 }
 
 .nav li a:hover:before {
     right: 12px;
-    opacity: 0.5;
+    opacity: 1;
+    background: var(--accentOneColor);
 }
 
 .nav-post-title-active .nav {
@@ -480,7 +505,12 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .social-link svg {
     height: 1.8rem;
-    fill: var(--white);
+    fill: var(--textLightColor);
+}
+
+.social-link:hover svg {
+    height: 1.8rem;
+    fill: var(--accentOneColor);
 }
 
 .social-link-fb svg {
@@ -492,7 +522,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .social-link-wb svg path {
-    stroke: var(--white);
+    stroke: var(--textLightColor);
 }
 
 .social-link-rss svg {
@@ -521,14 +551,15 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     opacity: 0.8;
 }
 
-.rss-button:hover {
+.rss-button:hover svg {
     opacity: 1;
+    fill: var(--accentOneColor);
 }
 
 .rss-button svg {
     margin-bottom: 1px;
     height: 2.1rem;
-    fill: var(--white);
+    fill: var(--textLightColor);
 }
 
 /* Special behaviors for home navigation */
@@ -661,7 +692,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-excerpt {
     max-width: 56em;
-    color: var(--primaryColor);
+    color: var(--textDarkSecondaryColor);
     font-family: Georgia, serif;
 }
 
@@ -751,7 +782,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: flex;
     flex-direction: column;
     margin: 2px 0 0 6px;
-    color: color(var(--primaryColor) l(+10%));
+    color: color(var(--textDarkSecondaryColor));
     font-size: 1.2rem;
     line-height: 1.4em;
     font-weight: 400;
@@ -764,7 +795,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-byline-content a {
-    color: color(var(--primaryColor) l(+20%));
+    color: color(var(--textDarkSecondaryColor));
     font-weight: 600;
 }
 
@@ -954,7 +985,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-full-custom-excerpt {
     margin: 20px 0 0;
-    color: var(--primaryDarkColor);
+    color: var(--textLightSecondaryColor);
     font-family: Georgia, serif;
     font-size: 2.3rem;
     line-height: 1.4em;
@@ -1484,7 +1515,7 @@ Usage (In Ghost editor):
 
 .post-full-byline-meta {
     margin: 2px 0 0;
-    color: color(var(--primaryColor) l(+10%));
+    color: color(var(--textDarkSecondaryColor));
     font-size: 1.2rem;
     line-height: 1.2em;
     letter-spacing: 0.2px;
@@ -1499,11 +1530,11 @@ Usage (In Ghost editor):
 }
 
 .post-full-byline-meta h4 a {
-    color: color(var(--primaryDarkColor) l(+10%));
+    color: color(var(--textDarkSecondaryColor));
 }
 
 .post-full-byline-meta h4 a:hover {
-    color: var(--primaryDarkColor);
+    color: var(--textDarkColor);
 }
 
 .post-full-byline-meta .bull {
@@ -1534,7 +1565,7 @@ Usage (In Ghost editor):
     width: 400px;
     font-size: 1.4rem;
     line-height: 1.5em;
-    background: var(--white);
+    background: var(--backgroundLightestColor);
     border-radius: 3px;
     box-shadow: rgba(39,44,49,0.08) 0 12px 26px, rgba(39, 44, 49, 0.06) 1px 3px 8px;
     opacity: 0;
@@ -1579,7 +1610,7 @@ Usage (In Ghost editor):
 
 .author-card .author-info p {
     margin: 4px 0 0;
-    color: color(var(--primaryColor) l(-10%));
+    color: color(var(--textDarkColor) l(-10%));
 }
 
 .author-card .author-info .bio h2 {
@@ -1860,7 +1891,7 @@ Usage (In Ghost editor):
 }
 
 .read-next .post-card-excerpt {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--textLightSecondaryColor);
 }
 
 .read-next .static-avatar {
@@ -1868,11 +1899,11 @@ Usage (In Ghost editor):
 }
 
 .read-next .post-card-byline-content {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--textLightSecondaryColor);
 }
 
 .read-next .post-card-byline-content a {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--textLightSecondaryColor);
 }
 
 .read-next-card {
@@ -2372,7 +2403,7 @@ Usage (In Ghost editor):
 }
 
 .no-image .author-header-content .author-meta {
-    color: var(--primaryColor);
+    color: var(--textDarkSecondaryColor);
     opacity: 1.0;
 }
 
@@ -2745,16 +2776,16 @@ Usage (In Ghost editor):
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    color: rgba(255,255,255,0.7);
+    color: var(--textLightSecondaryColor);
     font-size: 1.3rem;
 }
 
 .site-footer-content a {
-    color: rgba(255,255,255,0.7);
+    color: var(--textLightSecondaryColor);
 }
 
 .site-footer-content a:hover {
-    color: rgba(255,255,255,1);
+    color: var(--textLightColor);
     text-decoration: none;
 }
 
@@ -2798,8 +2829,8 @@ Usage (In Ghost editor):
 /* ---------------------------------------------------------- */
 @media (prefers-color-scheme: dark) {
     body {
-        color: rgba(255, 255, 255, 0.75);
-        background: var(--primaryDarkColor);
+        color: var(--textLightColor);
+        background: var(--backgroundDarkestColor);
     }
 
     img {
@@ -2810,8 +2841,13 @@ Usage (In Ghost editor):
         background: rgba(0,0,0,0.6);
     }
 
+    .site-archive-header .no-image .site-description {
+        color: var(--textLightSecondaryColor);
+        opacity: 1.0;
+    }
+
     .post-feed {
-        background: var(--primaryDarkColor);
+        background: var(--backgroundDarkestColor);
     }
 
     .post-card,
@@ -2819,16 +2855,29 @@ Usage (In Ghost editor):
         border-bottom-color: color(var(--primaryDarkColor) l(+8%));
     }
 
+    .no-image .author-header-content .author-meta {
+        color: var(--textLightSecondaryColor);
+        opacity: 1.0;
+    }
+
     .author-profile-image {
-        background: var(--primaryDarkColor);
+        background: var(--backgroundDarkestColor);
+    }
+
+    .author-card .author-info p {
+        color: var(--textLightSecondaryColor);
+    }
+
+    .post-card-byline-content {
+        color: var(--textLightSecondaryColor);
     }
 
     .post-card-byline-content a {
-        color: rgba(255, 255, 255, 0.75);
+        color: var(--textLightColor);
     }
 
     .post-card-byline-content a:hover {
-        color: var(--textLightColor);
+        color: var(--accentOneColor);
     }
 
     .post-card-image {
@@ -2840,7 +2889,7 @@ Usage (In Ghost editor):
     }
 
     .post-card-excerpt {
-        color: color(var(--primaryColor) l(+10%));
+        color: color(var(--textLightSecondaryColor) l(+10%));
     }
 
     .author-avatar,
@@ -2851,11 +2900,11 @@ Usage (In Ghost editor):
     .site-main,
     .post-template .site-main,
     .page-template .site-main {
-        background: var(--primaryDarkColor);
+        background: var(--backgroundDarkestColor);
     }
 
     .post-full-content {
-        background: var(--primaryDarkColor);
+        background: var(--backgroundDarkestColor);
     }
 
     .post-full-title {
@@ -2863,27 +2912,31 @@ Usage (In Ghost editor):
     }
 
     .post-full-custom-excerpt {
-        color: color(var(--primaryColor) l(+10%));
+        color: color(var(--textLightSecondaryColor));
     }
 
     .post-full-image {
-        background-color: color(var(--primaryDarkColor) l(+8%));
+        background-color: color(var(--backgroundDarkerColor) l(+8%));
     }
 
     .post-full-byline {
-        border-top-color: color(var(--primaryDarkColor) l(+15%));
+        border-top-color: color(var(--textLightSecondaryColor));
+    }
+
+    .post-full-byline-meta {
+        color: var(--textLightSecondaryColor);
     }
 
     .post-full-byline-meta h4 a {
-        color: rgba(255, 255, 255, 0.75);
+        color: var(--textLightColor);
     }
 
     .post-full-byline-meta h4 a:hover {
-        color: var(--white);
+        color: var(--accentOneColor);
     }
 
     .author-list-item .author-card {
-        background: color(var(--primaryDarkColor) l(+4%));
+        background: color(var(--backgroundDarkestColor) l(+4%));
         box-shadow: 0 12px 26px rgba(0,0,0,0.4);
     }
 
@@ -2892,7 +2945,7 @@ Usage (In Ghost editor):
     }
 
     .no-image .author-social-link a {
-        color: rgba(255, 255, 255, 0.75);
+        color: var(--textLightSecondaryColor);
     }
 
     .post-full-content h1,
@@ -2900,7 +2953,7 @@ Usage (In Ghost editor):
     .post-full-content h3,
     .post-full-content h4,
     .post-full-content h6 {
-        color: rgba(255, 255, 255, 0.9);
+        color: var(--textLightColor);
     }
 
     .post-full-content a {
