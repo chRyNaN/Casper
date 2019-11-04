@@ -32,7 +32,7 @@ production stylesheet in assets/built/screen.css
 @import "global.css";
 
 body {
-    background: #fff;
+    background: var(--backgroundLightestColor);
 }
 
 .img {
@@ -114,7 +114,7 @@ body {
     margin-top: 64px;
     padding-bottom: 12px;
     color: #fff;
-    background: color(var(--darkgrey) l(-5%)) no-repeat center center;
+    background: color(var(--primaryDarkColor) l(-5%)) no-repeat center center;
     background-size: cover;
 }
 
@@ -222,20 +222,20 @@ body {
 .site-archive-header .no-image {
     padding-top: 0;
     padding-bottom: 0;
-    color: var(--darkgrey);
-    background: #fff;
+    color: var(--primaryDarkColor);
+    background: var(--backgroundLightestColor);
     opacity: 1.0;
 }
 
 .site-archive-header .no-image .site-description {
-    color: var(--midgrey);
+    color: var(--primaryColor);
     opacity: 1.0;
 }
 
 
 .site-archive-header .no-image .site-header-content {
     padding: 5vw 0 10px;
-    border-bottom: 1px solid color(var(--lightgrey) l(+12%));
+    border-bottom: 1px solid color(var(--primaryColor) l(+12%));
 }
 
 
@@ -271,7 +271,7 @@ body {
     right: 0;
     left: 0;
     z-index: 1000;
-    background: color(var(--darkgrey) l(-5%));
+    background: color(var(--primaryDarkColor) l(-5%));
 }
 
 .site-nav {
@@ -324,8 +324,26 @@ body {
     -ms-overflow-scrolling: touch;
 }
 
-.site-nav-left .nav li:last-of-type {
-    padding-right: 20px;
+@media (max-width: 700px) {
+    .site-header-background:not(.responsive-header-img) .site-nav:after,
+    .site-nav-main .site-nav:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        z-index: 1000;
+        width: 40px;
+        height: 100%;
+    }
+
+    .site-header-background:not(.responsive-header-img) .site-nav:after,
+    .site-nav-main .site-nav:after {
+        right: 0;
+        background: linear-gradient(to right, color(var(--primaryDarkColor) l(-5%) a(0)) 0%,color(var(--primaryDarkColor) l(-5%)) 100%);
+    }
+
+    .nav li:last-of-type {
+        padding-right: 20px;
+    }
 }
 
 /* Site Nav Hack Explanation (above):
@@ -343,7 +361,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: inline-block;
     margin-right: 32px;
     padding: 12px 0;
-    color: #fff;
+    color: var(--textLightColor);
     font-size: 1.7rem;
     line-height: 1.8rem;
     font-weight: bold;
@@ -390,7 +408,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     position: relative;
     display: block;
     padding: 12px 12px;
-    color: #fff;
+    color: var(--textLightColor);
     opacity: 0.8;
     transition: opacity 0.35s ease-in-out;
 }
@@ -398,6 +416,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .nav li a:hover {
     text-decoration: none;
     opacity: 1;
+    color: var(--accentOneColor);
 }
 
 .nav li a:before {
@@ -407,7 +426,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     bottom: 8px;
     left: 12px;
     height: 1px;
-    background: #fff;
+    background: var(--backgroundLightestColor);
     opacity: 0.25;
     transition: all 0.35s ease-in-out;
 }
@@ -427,7 +446,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     visibility: hidden;
     position: absolute;
     top: 9px;
-    color: #fff;
+    color: var(--textLightColor);
     font-size: 1.7rem;
     font-weight: 400;
     text-transform: none;
@@ -496,7 +515,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .social-link svg {
     height: 1.8rem;
-    fill: #fff;
+    fill: var(--white);
 }
 
 .social-link-fb svg {
@@ -508,7 +527,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .social-link-wb svg path {
-    stroke: #fff;
+    stroke: var(--white);
 }
 
 .social-link-rss svg {
@@ -518,9 +537,9 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .subscribe-button {
     display: block;
     padding: 4px 10px;
-    margin: 0 0 0 10px;
-    border: #fff 1px solid;
-    color: #fff;
+    border: var(--white) 1px solid;
+    color: var(--white);
+    font-size: 1.2rem;
     line-height: 1em;
     border-radius: 10px;
     opacity: 0.8;
@@ -529,6 +548,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .subscribe-button:hover {
     text-decoration: none;
     opacity: 1;
+    border: var(--accentOneColor) 1px solid;
+    color: var(--accentOneColor) 1px solid;
 }
 
 .site-nav-right .nav + .subscribe-button {
@@ -547,7 +568,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .rss-button svg {
     margin-bottom: 1px;
     height: 2.1rem;
-    fill: #fff;
+    fill: var(--white);
 }
 
 /* Special behaviors for home navigation */
@@ -600,7 +621,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     flex-wrap: wrap;
     margin: 0 -20px;
     padding: 50px 0 0;
-    background: #fff;
+    background: var(--backgroundLightestColor);
 }
 
 .post-card {
@@ -612,7 +633,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     margin: 0 0 40px;
     padding: 0 20px 40px;
     min-height: 220px;
-    border-bottom: 1px solid color(var(--lightgrey) l(+12%));
+    border-bottom: 1px solid color(var(--primaryColor) l(+12%));
     background-size: cover;
 }
 
@@ -626,7 +647,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .post-card-image {
     width: 100%;
     height: 200px;
-    background: var(--lightgrey) no-repeat center center;
+    background: var(--backgroundDarkerColor) no-repeat center center;
 
     object-fit: cover;
 }
@@ -634,7 +655,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .post-card-content-link {
     position: relative;
     display: block;
-    color: var(--darkgrey);
+    color: var(--primaryDarkColor);
 }
 
 .post-card-content-link:hover {
@@ -655,7 +676,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-primary-tag {
     margin: 0 0 0.2em;
-    color: var(--blue);
+    color: var(--accentOneColor);
     font-size: 1.2rem;
     font-weight: 500;
     letter-spacing: 0.2px;
@@ -680,7 +701,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-excerpt {
     max-width: 56em;
-    color: var(--midgrey);
+    color: var(--primaryColor);
     font-family: Georgia, serif;
 }
 
@@ -699,7 +720,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: block;
     width: 100%;
     height: 100%;
-    background: color(var(--lightgrey) l(+10%));
+    background: color(var(--backgroundDarkerColor) l(+10%));
     border-radius: 100%;
 
     object-fit: cover;
@@ -731,7 +752,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     margin: 0 0 0 -6px;
     width: 34px;
     height: 34px;
-    border: #fff 2px solid;
+    border: var(--white) 2px solid;
     border-radius: 100%;
 }
 
@@ -741,7 +762,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     z-index: 999;
     display: block;
     padding: 2px 8px;
-    color: white;
+    color: var(--white);
     font-size: 1.2rem;
     letter-spacing: 0.2px;
     white-space: nowrap;
@@ -770,7 +791,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: flex;
     flex-direction: column;
     margin: 2px 0 0 6px;
-    color: color(var(--midgrey) l(+10%));
+    color: color(var(--primaryColor) l(+10%));
     font-size: 1.2rem;
     line-height: 1.4em;
     font-weight: 400;
@@ -783,7 +804,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-byline-content a {
-    color: color(var(--darkgrey) l(+20%));
+    color: color(var(--primaryColor) l(+20%));
     font-weight: 600;
 }
 
@@ -801,7 +822,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: flex;
     flex-direction: column;
     margin-left: 5px;
-    color: color(var(--midgrey) l(-10%));
+    color: color(var(--primaryColor) l(-10%));
     font-size: 1.3rem;
     line-height: 1.4em;
     font-weight: 500;
@@ -838,7 +859,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .post-card-large:hover {
-        border-bottom-color: color(var(--lightgrey) l(+10%));
+        border-bottom-color: color(var(--backgroundDarkerColor) l(+10%));
     }
 
     .post-card-large:not(.no-image) .post-card-header {
@@ -919,7 +940,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .page-template .site-main {
     margin-top: 64px;
     padding-bottom: 4vw;
-    background: #fff;
+    background: var(--backgroundLightestColor);
 }
 
 .post-full-header {
@@ -934,7 +955,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    color: var(--midgrey);
+    color: var(--primaryColor);
     font-size: 1.3rem;
     line-height: 1.4em;
     font-weight: 600;
@@ -942,7 +963,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-meta-date {
-    color: var(--midgrey);
+    color: var(--primaryColor);
     font-size: 1.2rem;
     font-weight: 400;
 }
@@ -968,12 +989,12 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-full-title {
     margin: 0 0 0.2em;
-    color: color(var(--darkgrey) l(-5%));
+    color: color(var(--primaryDarkColor) l(-5%));
 }
 
 .post-full-custom-excerpt {
     margin: 20px 0 0;
-    color: var(--midgrey);
+    color: var(--primaryDarkColor);
     font-family: Georgia, serif;
     font-size: 2.3rem;
     line-height: 1.4em;
@@ -992,7 +1013,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     align-items: center;
     overflow: hidden;
     margin: 25px 0 50px;
-    background: color(var(--lightgrey) l(+10%));
+    background: color(var(--backgroundDarkerColor) l(+10%));
     border-radius: 3px;
 }
 
@@ -1010,7 +1031,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     font-family: Georgia, serif;
     font-size: 2.0rem;
     line-height: 1.6em;
-    background: #fff;
+    background: var(--backgroundLightestColor);
 }
 
 @media (max-width: 1170px) {
@@ -1078,21 +1099,21 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-content a {
-    color: var(--darkgrey);
+    color: var(--primaryDarkColor);
     word-break: break-word;
-    box-shadow: var(--darkgrey) 0 -1px 0 inset;
+    box-shadow: var(--primaryDarkColor) 0 -1px 0 inset;
     transition: all 0.2s ease-in-out;
 }
 
 .post-full-content a:hover {
-    color: var(--blue);
+    color: var(--accentOneColor);
     text-decoration: none;
-    box-shadow: var(--blue) 0 -1px 0 inset;
+    box-shadow: var(--accentOneColor) 0 -1px 0 inset;
 }
 
 .post-full-content strong,
 .post-full-content em {
-    color: color(var(--darkgrey) l(-5%));
+    color: color(var(--primaryDarkColor) l(-5%));
 }
 
 .post-full-content small {
@@ -1157,7 +1178,7 @@ Usage (In Ghost editor):
 .post-full-content blockquote {
     margin: 0 0 1.5em;
     padding: 0 1.5em;
-    border-left: #3eb0ef 3px solid;
+    border-left: var(--accentOneColor) 3px solid;
 }
 @media (max-width: 500px) {
     .post-full-content blockquote {
@@ -1182,7 +1203,7 @@ Usage (In Ghost editor):
     font-size: 0.8em;
     line-height: 1em;
     font-weight: 400!important;
-    background: var(--whitegrey);
+    background: var(--backgroundLighterColor);
     border-radius: 3px;
 }
 
@@ -1195,16 +1216,16 @@ Usage (In Ghost editor):
     margin: 1.5em 0 3em;
     padding: 20px;
     max-width: 100%;
-    border: color(var(--darkgrey) l(-10%)) 1px solid;
-    color: var(--whitegrey);
+    border: color(var(--primaryDarkColor) l(-10%)) 1px solid;
+    color: var(--backgroundLighterColor);
     font-size: 1.4rem;
     line-height: 1.5em;
-    background: color(var(--darkgrey) l(-3%));
+    background: color(var(--backgroundDarkerColor) l(-3%));
     border-radius: 5px;
 }
 
 .post-full-content pre ::selection {
-    color: color(var(--midgrey) l(-25%));
+    color: color(var(--primaryDarkColor) l(-25%));
 }
 
 .post-full-content pre code {
@@ -1235,8 +1256,8 @@ Usage (In Ghost editor):
     margin-left: -10px;
     width: 1px;
     height: 30px;
-    background: color(var(--lightgrey) l(+10%));
-    box-shadow: #fff 0 0 0 5px;
+    background: color(var(--backgroundDarkerColor) l(+10%));
+    box-shadow: var(--white) 0 0 0 5px;
     transform: rotate(45deg);
 }
 
@@ -1250,7 +1271,7 @@ Usage (In Ghost editor):
 .post-full-content h4,
 .post-full-content h5,
 .post-full-content h6 {
-    color: color(var(--darkgrey) l(-5%));
+    color: color(var(--primaryDarkColor) l(-5%));
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
@@ -1328,7 +1349,7 @@ Usage (In Ghost editor):
     margin: 0.5em 0;
     padding: 0.4em 1em 0.9em;
     border: 0;
-    color: var(--blue);
+    color: var(--accentOneColor);
     font-family: Georgia,serif;
     font-size: 3.2rem;
     line-height: 1.35em;
@@ -1375,7 +1396,7 @@ Usage (In Ghost editor):
 }
 
 .footnote-backref {
-    color: var(--blue) !important;
+    color: var(--accentOneColor) !important;
     font-size: 1.2rem;
     font-weight: bold;
     text-decoration: none !important;
@@ -1463,19 +1484,19 @@ Usage (In Ghost editor):
 }
 
 .post-full-content table th {
-    color: var(--darkgrey);
+    color: var(--primaryDarkColor);
     font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 0.2px;
     text-align: left;
     text-transform: uppercase;
-    background-color: color(var(--whitegrey) l(+4%));
+    background-color: color(var(--backgroundLighterColor) l(+4%));
 }
 
 .post-full-content table th,
 .post-full-content table td {
     padding: 6px 12px;
-    border: color(var(--whitegrey) l(-1%) s(-5%)) 1px solid;
+    border: color(var(--backgroundLighterColor) l(-1%) s(-5%)) 1px solid;
 }
 
 
@@ -1487,7 +1508,7 @@ Usage (In Ghost editor):
     justify-content: space-between;
     margin: 35px 0 0;
     padding-top: 15px;
-    border-top: 1px solid color(var(--lightgrey) l(+10%));
+    border-top: 1px solid color(var(--primaryColor) l(+10%));
 }
 
 .post-full-byline-content {
@@ -1503,7 +1524,7 @@ Usage (In Ghost editor):
 
 .post-full-byline-meta {
     margin: 2px 0 0;
-    color: color(var(--midgrey) l(+10%));
+    color: color(var(--primaryColor) l(+10%));
     font-size: 1.2rem;
     line-height: 1.2em;
     letter-spacing: 0.2px;
@@ -1518,11 +1539,11 @@ Usage (In Ghost editor):
 }
 
 .post-full-byline-meta h4 a {
-    color: color(var(--darkgrey) l(+10%));
+    color: color(var(--primaryDarkColor) l(+10%));
 }
 
 .post-full-byline-meta h4 a:hover {
-    color: var(--darkgrey);
+    color: var(--primaryDarkColor);
 }
 
 .post-full-byline-meta .bull {
@@ -1537,7 +1558,7 @@ Usage (In Ghost editor):
     margin: 0 -4px;
     width: 40px;
     height: 40px;
-    border: #fff 2px solid;
+    border: var(--white) 2px solid;
     border-radius: 100%;
     transition: all 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99) 700ms;
 }
@@ -1553,7 +1574,7 @@ Usage (In Ghost editor):
     width: 400px;
     font-size: 1.4rem;
     line-height: 1.5em;
-    background: white;
+    background: var(--white);
     border-radius: 3px;
     box-shadow: rgba(39,44,49,0.08) 0 12px 26px, rgba(39, 44, 49, 0.06) 1px 3px 8px;
     opacity: 0;
@@ -1571,7 +1592,7 @@ Usage (In Ghost editor):
     margin-left: -8px;
     width: 0;
     height: 0;
-    border-top: 8px solid #fff;
+    border-top: 8px solid var(--white);
     border-right: 8px solid transparent;
     border-left: 8px solid transparent;
 }
@@ -1598,7 +1619,7 @@ Usage (In Ghost editor):
 
 .author-card .author-info p {
     margin: 4px 0 0;
-    color: color(var(--midgrey) l(-10%));
+    color: color(var(--primaryColor) l(-10%));
 }
 
 .author-card .author-info .bio h2 {
@@ -1672,16 +1693,16 @@ Usage (In Ghost editor):
 .subscribe-form {
     margin: 1.5em 0;
     padding: 6.5vw 7vw 8vw;
-    border: color(var(--lightgrey) l(+10%)) 1px solid;
+    border: color(var(--primaryColor) l(+10%)) 1px solid;
     text-align: center;
-    background: linear-gradient(color(var(--whitegrey) l(+6%)), color(var(--whitegrey) l(+4%)));
+    background: linear-gradient(color(var(--backgroundLighterColor) l(+6%)), color(var(--backgroundLighterColor) l(+4%)));
     border-radius: 3px;
 }
 
 .subscribe-form-title {
     margin: 0 0 3px 0;
     padding: 0;
-    color: var(--darkgrey);
+    color: var(--primaryDarkColor);
     font-size: 3.5rem;
     line-height: 1;
     font-weight: 600;
@@ -1689,7 +1710,7 @@ Usage (In Ghost editor):
 
 .subscribe-form-description {
     margin-bottom: 0.2em 0 1em;
-    color: var(--midgrey);
+    color: var(--primaryColor);
     font-size: 2.1rem;
     line-height: 1.55em;
 }
@@ -1712,8 +1733,8 @@ Usage (In Ghost editor):
     display: block;
     padding: 10px;
     width: 100%;
-    border: color(var(--lightgrey) l(+7%)) 1px solid;
-    color: var(--midgrey);
+    border: color(var(--primaryColor) l(+7%)) 1px solid;
+    color: var(--primaryColor);
     font-size: 1.8rem;
     line-height: 1em;
     font-weight: normal;
@@ -1726,7 +1747,7 @@ Usage (In Ghost editor):
 
 .subscribe-email:focus {
     outline: 0;
-    border-color: color(var(--lightgrey) l(-2%));
+    border-color: color(var(--primaryColor) l(-2%));
 }
 
 .subscribe-form button {
@@ -1736,16 +1757,16 @@ Usage (In Ghost editor):
     padding: 0 20px;
     height: 43px;
     outline: none;
-    color: #fff;
+    color: var(--white);
     font-size: 1.5rem;
     line-height: 39px;
     font-weight: 400;
     text-align: center;
     background: linear-gradient(
-    color(var(--blue) whiteness(+7%)),
-    color(var(--blue) lightness(-7%) saturation(-10%)) 60%,
-    color(var(--blue) lightness(-7%) saturation(-10%)) 90%,
-    color(var(--blue) lightness(-4%) saturation(-10%))
+    color(var(--accentOneColor) whiteness(+7%)),
+    color(var(--accentOneColor) lightness(-7%) saturation(-10%)) 60%,
+    color(var(--accentOneColor) lightness(-7%) saturation(-10%)) 90%,
+    color(var(--accentOneColor) lightness(-4%) saturation(-10%))
     );
     border-radius: 5px;
 
@@ -1754,7 +1775,7 @@ Usage (In Ghost editor):
 
 .subscribe-form button:active,
 .subscribe-form button:focus {
-    background: color(var(--blue) lightness(-9%) saturation(-10%));
+    background: color(var(--accentOneColor) lightness(-9%) saturation(-10%));
 }
 
 .subscribe-form .button-loader,
@@ -1778,7 +1799,7 @@ Usage (In Ghost editor):
 
 .subscribe-form .button-loader svg path,
 .subscribe-form .button-loader svg rect {
-    fill: #fff;
+    fill: var(--white);
 }
 
 .subscribe-form .success .message-success,
@@ -1786,7 +1807,7 @@ Usage (In Ghost editor):
 .subscribe-form .error .message-error {
     margin: 1em auto 0;
     max-width: 400px;
-    color: var(--red);
+    color: var(--accentTwoFocusedColor);
     font-size: 1.6rem;
     line-height: 1.5em;
     text-align: center;
@@ -1794,7 +1815,7 @@ Usage (In Ghost editor):
 
 .subscribe-form .success .message-success {
     display: block;
-    color: color(var(--green) l(-5%));
+    color: color(var(--accentThreeColor) l(-5%));
 }
 
 .subscribe-form .invalid .message-error,
@@ -1844,7 +1865,7 @@ Usage (In Ghost editor):
 
 .read-next {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    background: color(var(--darkgrey) l(-5%));
+    background: color(var(--primaryDarkColor) l(-5%));
 }
 
 .read-next-feed {
@@ -1864,12 +1885,12 @@ Usage (In Ghost editor):
 }
 
 .read-next .post-card-primary-tag {
-    color: #fff;
+    color: var(--white);
     opacity: 0.6;
 }
 
 .read-next .post-card-title {
-    color: #fff;
+    color: var(--white);
     opacity: 0.8;
     transition: all 0.2s ease-in-out;
 }
@@ -1883,7 +1904,7 @@ Usage (In Ghost editor):
 }
 
 .read-next .static-avatar {
-    border-color: #000;
+    border-color: var(--black);
 }
 
 .read-next .post-card-byline-content {
@@ -1902,7 +1923,7 @@ Usage (In Ghost editor):
     overflow: hidden;
     margin: 0 25px 50px;
     padding: 25px;
-    background: linear-gradient(color(var(--darkgrey) l(+2%)), color(var(--darkgrey) l(-5%)));
+    background: linear-gradient(color(var(--primaryDarkColor) l(+2%)), color(var(--primaryDarkColor) l(-5%)));
     border-radius: 3px;
 }
 
@@ -1925,7 +1946,7 @@ Usage (In Ghost editor):
 }
 
 .read-next-card-header h3 a {
-    color: #fff;
+    color: var(--white);
     font-weight: 500;
     text-decoration: none;
     opacity: 0.8;
@@ -1970,7 +1991,7 @@ Usage (In Ghost editor):
 
 .read-next-card-content li a {
     display: block;
-    color: #fff;
+    color: var(--white);
     opacity: 0.8;
 }
 
@@ -2013,8 +2034,8 @@ Usage (In Ghost editor):
 }
 
 .read-next-card-footer a:hover {
-    border-color: var(--yellow);
-    color: var(--yellow);
+    border-color: var(--accentTwoColor);
+    color: var(--accentTwoColor);
     text-decoration: none;
 }
 
@@ -2090,7 +2111,7 @@ Usage (In Ghost editor):
 
 .post-full-content figcaption {
     margin: 1.0em 0 0;
-    color: color(var(--midgrey) l(-10%));
+    color: color(var(--primaryColor) l(-10%));
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 75%;
     line-height: 1.5em;
@@ -2175,7 +2196,7 @@ Usage (In Ghost editor):
 .post-full-content .kg-bookmark-container {
     display: flex;
     min-height: 148px;
-    color: var(--darkgrey);
+    color: var(--primaryDarkColor);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     text-decoration: none;
     border-radius: 3px;
@@ -2183,7 +2204,7 @@ Usage (In Ghost editor):
 }
 
 .post-full-content .kg-bookmark-container:hover {
-    color: var(--darkgrey);
+    color: var(--primaryDarkColor);
     text-decoration: none;
     box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.09);
 }
@@ -2198,7 +2219,7 @@ Usage (In Ghost editor):
 }
 
 .kg-bookmark-title {
-    color: color(var(--midgrey) l(-30%));
+    color: color(var(--primaryColor) l(-30%));
     font-size: 1.6rem;
     line-height: 1.5em;
     font-weight: 600;
@@ -2206,7 +2227,7 @@ Usage (In Ghost editor):
 }
 
 .post-full-content .kg-bookmark-container:hover .kg-bookmark-title {
-    color: var(--blue);
+    color: var(--accentOneColor);
 }
 
 .kg-bookmark-description {
@@ -2214,7 +2235,7 @@ Usage (In Ghost editor):
     overflow-y: hidden;
     margin-top: 12px;
     max-height: 48px;
-    color: color(var(--midgrey) l(-10%));
+    color: color(var(--primaryColor) l(-10%));
     font-size: 1.5rem;
     line-height: 1.5em;
     font-weight: 400;
@@ -2245,7 +2266,7 @@ Usage (In Ghost editor):
     flex-wrap: wrap;
     align-items: center;
     margin-top: 14px;
-    color: color(var(--midgrey) l(-10%));
+    color: color(var(--primaryColor) l(-10%));
     font-size: 1.5rem;
     font-weight: 400;
 }
@@ -2386,22 +2407,22 @@ Usage (In Ghost editor):
 }
 
 .no-image .author-header-content .author-bio {
-    color: var(--midgrey);
+    color: var(--primaryColor);
     opacity: 1.0;
 }
 
 .no-image .author-header-content .author-meta {
-    color: var(--midgrey);
+    color: var(--primaryColor);
     opacity: 1.0;
 }
 
 .author-social-link a {
-    color: #fff;
+    color: var(--white);
     font-weight: 600;
 }
 
 .no-image .author-social-link a {
-    color: var(--darkgrey);
+    color: var(--primaryDarkColor);
 }
 
 .author-social-link a:hover {
@@ -2424,14 +2445,14 @@ Usage (In Ghost editor):
     content: "\2022";
     display: inline-block;
     margin: 0 12px;
-    color: #fff;
+    color: var(--white);
     opacity: 0.6;
 }
 
 .no-image .author-location + .author-stats:before,
 .no-image .author-stats + .author-social-link:before,
 .no-image .author-social-link + .author-social-link:before {
-    color: var(--midgrey);
+    color: var(--primaryColor);
 }
 
 @media (max-width: 500px) {
@@ -2486,13 +2507,13 @@ Usage (In Ghost editor):
 
 .error-message {
     padding-bottom: 10vw;
-    border-bottom: 1px solid color(var(--lightgrey) l(+10%));
+    border-bottom: 1px solid color(var(--primaryColor) l(+10%));
     text-align: center;
 }
 
 .error-code {
     margin: 0;
-    color: var(--lightgrey);
+    color: var(--primaryColor);
     font-size: 12vw;
     line-height: 1em;
     letter-spacing: -5px;
@@ -2501,7 +2522,7 @@ Usage (In Ghost editor):
 
 .error-description {
     margin: 0;
-    color: var(--midgrey);
+    color: var(--primaryColor);
     font-size: 3rem;
     line-height: 1.3em;
     font-weight: 400;
@@ -2556,9 +2577,9 @@ Usage (In Ghost editor):
     left: 0;
     z-index: 9000;
     padding: 20px 0;
-    color: #fff;
+    color: var(--textLightColor);
     text-align: center;
-    background: var(--green);
+    background: var(--accentThreeColor);
     transition: all 0.35s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
     transform: translateY(-175%);
 }
@@ -2591,7 +2612,7 @@ Usage (In Ghost editor):
     display: block;
     width: 20px;
     height: 1px;
-    background: #fff;
+    background: var(--backgroundLightestColor);
     opacity: 0.8;
     transform: rotate(45deg);
 }
@@ -2604,7 +2625,7 @@ Usage (In Ghost editor):
     display: block;
     width: 20px;
     height: 1px;
-    background: #fff;
+    background: var(--backgroundLightestColor);
     opacity: 0.8;
     transform: rotate(-45deg);
 }
@@ -2645,13 +2666,13 @@ Usage (In Ghost editor):
     z-index: 9999;
     margin: 0 0 5vw 0;
     padding: 4vw;
-    color: #fff;
+    color: var(--white);
     text-align: center;
 }
 
 .subscribe-overlay .subscribe-form {
     border: none;
-    color: #fff;
+    color: var(--white);
     background: none;
 }
 
@@ -2672,7 +2693,7 @@ Usage (In Ghost editor):
 .subscribe-overlay-description {
     margin: 0 auto 50px;
     max-width: 650px;
-    color: #fff;
+    color: var(--white);
     font-family: Georgia, serif;
     font-size: 2.4rem;
     line-height: 1.3em;
@@ -2697,7 +2718,7 @@ Usage (In Ghost editor):
     padding: 14px 20px;
     width: 100%;
     border: none;
-    color: var(--midgrey);
+    color: var(--primaryColor);
     font-size: 2rem;
     line-height: 1em;
     font-weight: normal;
@@ -2711,7 +2732,7 @@ Usage (In Ghost editor):
 
 .subscribe-email:focus {
     outline: 0;
-    border-color: color(var(--lightgrey) l(-2%));
+    border-color: color(var(--primaryColor) l(-2%));
 }
 
 .subscribe-overlay button {
@@ -2720,16 +2741,16 @@ Usage (In Ghost editor):
     padding: 0 25px;
     height: 52px;
     outline: none;
-    color: #fff;
+    color: var(--white);
     font-size: 1.7rem;
     line-height: 38px;
     font-weight: 400;
     text-align: center;
     background: linear-gradient(
-    color(var(--blue) whiteness(+7%)),
-    color(var(--blue) lightness(-7%) saturation(-10%)) 60%,
-    color(var(--blue) lightness(-7%) saturation(-10%)) 90%,
-    color(var(--blue) lightness(-4%) saturation(-10%))
+    color(var(--accentOneColor) whiteness(+7%)),
+    color(var(--accentOneColor) lightness(-7%) saturation(-10%)) 60%,
+    color(var(--accentOneColor) lightness(-7%) saturation(-10%)) 90%,
+    color(var(--accentOneColor) lightness(-4%) saturation(-10%))
     );
     border-radius: 8px;
 
@@ -2738,7 +2759,7 @@ Usage (In Ghost editor):
 
 .subscribe-overlay button:active,
 .subscribe-overlay button:focus {
-    background: color(var(--blue) lightness(-9%) saturation(-10%));
+    background: color(var(--accentOneColor) lightness(-9%) saturation(-10%));
 }
 
 .subscribe-overlay .loading .button-loader {
@@ -2753,8 +2774,8 @@ Usage (In Ghost editor):
     position: relative;
     padding-top: 20px;
     padding-bottom: 60px;
-    color: #fff;
-    background: color(var(--darkgrey) l(-5%));
+    color: var(--white);
+    background: color(var(--primaryDarkColor) l(-5%));
 }
 
 .site-footer-content {
@@ -2792,7 +2813,7 @@ Usage (In Ghost editor):
     display: block;
     width: 2px;
     height: 2px;
-    background: #fff;
+    background: var(--backgroundLightestColor);
     border-radius: 100%;
 }
 
@@ -2816,7 +2837,7 @@ Usage (In Ghost editor):
 @media (prefers-color-scheme: dark) {
     body {
         color: rgba(255, 255, 255, 0.75);
-        background: var(--darkmode);
+        background: var(--primaryDarkColor);
     }
 
     img {
@@ -2828,16 +2849,16 @@ Usage (In Ghost editor):
     }
 
     .post-feed {
-        background: var(--darkmode);
+        background: var(--primaryDarkColor);
     }
 
     .post-card,
     .post-card:hover {
-        border-bottom-color: color(var(--darkmode) l(+8%));
+        border-bottom-color: color(var(--primaryDarkColor) l(+8%));
     }
 
     .author-profile-image {
-        background: var(--darkmode);
+        background: var(--primaryDarkColor);
     }
 
     .post-card-byline-content a {
@@ -2845,11 +2866,11 @@ Usage (In Ghost editor):
     }
 
     .post-card-byline-content a:hover {
-        color: #fff;
+        color: var(--textLightColor);
     }
 
     .post-card-image {
-        background: var(--darkmode);
+        background: var(--primaryDarkColor);
     }
 
     .post-card-title {
@@ -2857,22 +2878,22 @@ Usage (In Ghost editor):
     }
 
     .post-card-excerpt {
-        color: color(var(--midgrey) l(+10%));
+        color: color(var(--primaryColor) l(+10%));
     }
 
     .author-avatar,
     .static-avatar {
-        border-color: color(var(--darkgrey) l(+2%));
+        border-color: color(var(--primaryDarkColor) l(+2%));
     }
 
     .site-main,
     .post-template .site-main,
     .page-template .site-main {
-        background: var(--darkmode);
+        background: var(--primaryDarkColor);
     }
 
     .post-full-content {
-        background: var(--darkmode);
+        background: var(--primaryDarkColor);
     }
 
     .post-full-title {
@@ -2880,15 +2901,15 @@ Usage (In Ghost editor):
     }
 
     .post-full-custom-excerpt {
-        color: color(var(--midgrey) l(+10%));
+        color: color(var(--primaryColor) l(+10%));
     }
 
     .post-full-image {
-        background-color: color(var(--darkmode) l(+8%));
+        background-color: color(var(--primaryDarkColor) l(+8%));
     }
 
     .post-full-byline {
-        border-top-color: color(var(--darkmode) l(+15%));
+        border-top-color: color(var(--primaryDarkColor) l(+15%));
     }
 
     .post-full-byline-meta h4 a {
@@ -2896,16 +2917,16 @@ Usage (In Ghost editor):
     }
 
     .post-full-byline-meta h4 a:hover {
-        color: #fff;
+        color: var(--white);
     }
 
     .author-list-item .author-card {
-        background: color(var(--darkmode) l(+4%));
+        background: color(var(--primaryDarkColor) l(+4%));
         box-shadow: 0 12px 26px rgba(0,0,0,0.4);
     }
 
     .author-list-item .author-card:before {
-        border-top-color: color(var(--darkmode) l(+4%));
+        border-top-color: color(var(--primaryDarkColor) l(+4%));
     }
 
     .no-image .author-social-link a {
@@ -2921,25 +2942,25 @@ Usage (In Ghost editor):
     }
 
     .post-full-content a {
-        color: #fff;
-        box-shadow: inset 0 -1px 0 #fff;
+        color: var(--textLightColor);
+        box-shadow: inset 0 -1px 0 var(--textLightColor);
     }
 
     .post-full-content strong {
-        color: #fff;
+        color: var(--textLightColor);
     }
 
     .post-full-content em {
-        color: #fff;
+        color: var(--textLightColor);
     }
 
     .post-full-content code {
-        color: #fff;
-        background: #000;
+        color: var(--textLightColor);
+        background: var(--black);
     }
 
     hr {
-        border-top-color: color(var(--darkmode) l(+8%));
+        border-top-color: color(var(--primaryDarkColor) l(+8%));
     }
 
     .post-full-content figcaption {
@@ -2947,21 +2968,21 @@ Usage (In Ghost editor):
     }
 
     .post-full-content table td:first-child {
-        background-image: linear-gradient(to right, var(--darkmode) 50%, color(var(--darkmode) a(0%)) 100%);
+        background-image: linear-gradient(to right, var(--primaryDarkColor) 50%, color(var(--primaryDarkColor) a(0%)) 100%);
     }
 
     .post-full-content table td:last-child {
-        background-image: linear-gradient(to left, var(--darkmode) 50%, color(var(--darkmode) a(0%)) 100%);
+        background-image: linear-gradient(to left, var(--primaryDarkColor) 50%, color(var(--primaryDarkColor) a(0%)) 100%);
     }
 
     .post-full-content table th {
         color: rgba(255, 255, 255, 0.85);
-        background-color: color(var(--darkmode) l(+8%));
+        background-color: color(var(--primaryDarkColor) l(+8%));
     }
 
     .post-full-content table th,
     .post-full-content table td {
-        border: color(var(--darkmode) l(+8%)) 1px solid;
+        border: color(var(--primaryDarkColor) l(+8%)) 1px solid;
     }
 
     .post-full-content .kg-bookmark-container,
@@ -2971,7 +2992,7 @@ Usage (In Ghost editor):
     }
 
     .kg-bookmark-title {
-        color: #fff;
+        color: var(--textLightColor);
     }
 
     .kg-bookmark-description {
@@ -2984,11 +3005,11 @@ Usage (In Ghost editor):
 
     .site-archive-header .no-image {
         color: rgba(255, 255, 255, 0.9);
-        background: var(--darkmode);
+        background: var(--primaryDarkColor);
     }
 
     .site-archive-header .no-image .site-header-content {
-        border-bottom-color: color(var(--darkmode) l(+15%));
+        border-bottom-color: color(var(--primaryDarkColor) l(+15%));
     }
 
     .site-header-content .author-profile-image {
@@ -2997,7 +3018,7 @@ Usage (In Ghost editor):
 
     .subscribe-form {
         border: none;
-        background: linear-gradient(color(var(--darkmode) l(-6%)), color(var(--darkmode) l(-3%)));
+        background: linear-gradient(color(var(--primaryDarkColor) l(-6%)), color(var(--primaryDarkColor) l(-3%)));
     }
 
     .subscribe-form-title {
@@ -3009,13 +3030,13 @@ Usage (In Ghost editor):
     }
 
     .subscribe-email {
-        border-color: color(var(--darkmode) l(+6%));
+        border-color: color(var(--primaryDarkColor) l(+6%));
         color: rgba(255, 255, 255, 0.9);
-        background: color(var(--darkmode) l(+3%));
+        background: color(var(--primaryDarkColor) l(+3%));
     }
 
     .subscribe-email:focus {
-        border-color: color(var(--darkmode) l(+25%));
+        border-color: color(var(--primaryDarkColor) l(+25%));
     }
 
     .subscribe-form button {
@@ -3024,10 +3045,10 @@ Usage (In Ghost editor):
 
     .subscribe-form .invalid .message-error,
     .subscribe-form .error .message-error {
-        color: color(var(--red) l(+5%) s(-5%));
+        color: color(var(--accentTwoFocusedColor) l(+5%) s(-5%));
     }
 
     .subscribe-form .success .message-success {
-        color: color(var(--green) l(+5%) s(-5%));
+        color: color(var(--accentThreeColor) l(+5%) s(-5%));
     }
 }
