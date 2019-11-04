@@ -15,6 +15,19 @@
     --pink: #fa3a57;
     --brown: #a3821a;
     --darkmode: color(var(--darkgrey) l(+2%));
+
+    --primaryDarkColor: #313640;
+    --primaryColor: #474E5D;
+    --white: #FFFFFF;
+    --textLightColor: #FFFFFF;
+    --textDarkColor: #313640;
+    --accentOneColor: #40B0F9;
+    --accentTwoColor: #FF9421;
+    --accentTwoFocusedColor: #F37B20;
+    --accentThreeColor: #41AF3D;
+    --backgroundDarkerColor: #E9E9E9;
+    --backgroundLighterColor: #F7F7F3;
+    --backgroundLightestColor: #FFFFFF;
 }
 
 /* Reset
