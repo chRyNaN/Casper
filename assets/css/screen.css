@@ -1749,17 +1749,12 @@ Usage (In Ghost editor):
     padding: 0 20px;
     height: 43px;
     outline: none;
-    color: var(--white);
+    color: var(--textLightColor);
     font-size: 1.5rem;
     line-height: 39px;
     font-weight: 400;
     text-align: center;
-    background: linear-gradient(
-    color(var(--accentOneColor) whiteness(+7%)),
-    color(var(--accentOneColor) lightness(-7%) saturation(-10%)) 60%,
-    color(var(--accentOneColor) lightness(-7%) saturation(-10%)) 90%,
-    color(var(--accentOneColor) lightness(-4%) saturation(-10%))
-    );
+    background: var(--accentTwoColor);
     border-radius: 5px;
 
     -webkit-font-smoothing: subpixel-antialiased;
@@ -1767,7 +1762,7 @@ Usage (In Ghost editor):
 
 .subscribe-form button:active,
 .subscribe-form button:focus {
-    background: color(var(--accentOneColor) lightness(-9%) saturation(-10%));
+    background: var(--accentTwoFocusedColor);
 }
 
 .subscribe-form .button-loader,
@@ -2712,7 +2707,7 @@ Usage (In Ghost editor):
     padding: 14px 20px;
     width: 100%;
     border: none;
-    color: var(--primaryColor);
+    color: var(--textDarkColor);
     font-size: 2rem;
     line-height: 1em;
     font-weight: normal;
@@ -2735,17 +2730,12 @@ Usage (In Ghost editor):
     padding: 0 25px;
     height: 52px;
     outline: none;
-    color: var(--white);
+    color: var(--textLightColor);
     font-size: 1.7rem;
     line-height: 38px;
     font-weight: 400;
     text-align: center;
-    background: linear-gradient(
-    color(var(--accentOneColor) whiteness(+7%)),
-    color(var(--accentOneColor) lightness(-7%) saturation(-10%)) 60%,
-    color(var(--accentOneColor) lightness(-7%) saturation(-10%)) 90%,
-    color(var(--accentOneColor) lightness(-4%) saturation(-10%))
-    );
+    background: var(--accentTwoColor);
     border-radius: 8px;
 
     -webkit-font-smoothing: subpixel-antialiased;
@@ -2753,7 +2743,7 @@ Usage (In Ghost editor):
 
 .subscribe-overlay button:active,
 .subscribe-overlay button:focus {
-    background: color(var(--accentOneColor) lightness(-9%) saturation(-10%));
+    background: var(--accentTwoFocusedColor);
 }
 
 .subscribe-overlay .loading .button-loader {
@@ -3066,5 +3056,9 @@ Usage (In Ghost editor):
 
     .subscribe-form .success .message-success {
         color: color(var(--accentThreeColor) l(+5%) s(-5%));
+    }
+
+    .subscribe-overlay .subscribe-email {
+        color: var(--textLightColor);
     }
 }
