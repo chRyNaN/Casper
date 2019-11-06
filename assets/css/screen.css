@@ -532,19 +532,19 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .subscribe-button {
     display: block;
     padding: 4px 10px;
-    border: var(--white) 1px solid;
-    color: var(--white);
+    border: var(--accentTwoColor) 1px solid;
+    color: var(--accentTwoColor);
     font-size: 1.2rem;
     line-height: 1em;
     border-radius: 10px;
-    opacity: 0.8;
+    opacity: 1;
 }
 
 .subscribe-button:hover {
     text-decoration: none;
     opacity: 1;
-    border: var(--accentOneColor) 1px solid;
-    color: var(--accentOneColor) 1px solid;
+    border: var(--accentTwoFocusedColor) 1px solid;
+    color: var(--accentTwoFocusedColor) 1px solid;
 }
 
 .rss-button {
@@ -1724,8 +1724,8 @@ Usage (In Ghost editor):
     display: block;
     padding: 10px;
     width: 100%;
-    border: color(var(--primaryColor) l(+7%)) 1px solid;
-    color: var(--primaryColor);
+    border: color(var(--accentTwoColor)) 1px solid;
+    color: var(--textDarkColor);
     font-size: 1.8rem;
     line-height: 1em;
     font-weight: normal;
@@ -1738,7 +1738,7 @@ Usage (In Ghost editor):
 
 .subscribe-email:focus {
     outline: 0;
-    border-color: color(var(--primaryColor) l(-2%));
+    border-color: var(--accentTwoFocusedColor);
 }
 
 .subscribe-form button {
@@ -2725,7 +2725,7 @@ Usage (In Ghost editor):
 
 .subscribe-email:focus {
     outline: 0;
-    border-color: color(var(--primaryColor) l(-2%));
+    border-color: var(--accentTwoFocusedColor);
 }
 
 .subscribe-overlay button {
@@ -3045,13 +3045,13 @@ Usage (In Ghost editor):
     }
 
     .subscribe-email {
-        border-color: color(var(--primaryDarkColor) l(+6%));
-        color: rgba(255, 255, 255, 0.9);
-        background: color(var(--primaryDarkColor) l(+3%));
+        border-color: var(--accentTwoColor);
+        color: var(--textLightColor);
+        background: var(--primaryColor);
     }
 
     .subscribe-email:focus {
-        border-color: color(var(--primaryDarkColor) l(+25%));
+        border-color: var(--accentTwoFocusedColor);
     }
 
     .subscribe-form button {
