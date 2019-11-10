@@ -26,6 +26,12 @@
     --accentTwoColor: #FF9421;
     --accentTwoFocusedColor: #F37B20;
     --accentThreeColor: #41AF3D;
+<<<<<<< b341b50dc8515331618224e4a3f5e67a9ae3439e
+=======
+    --accentThreeFocusedColor: #41AF3D;
+    --errorColor: #FF9421;
+    --backgroundDarkestColor: #313640;
+>>>>>>> Added connect form css
     --backgroundDarkerColor: #E9E9E9;
     --backgroundLighterColor: #F7F7F3;
     --backgroundLightestColor: #FFFFFF;
