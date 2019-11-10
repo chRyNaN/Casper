@@ -1191,11 +1191,11 @@ Usage (In Ghost editor):
 }
 
 .post-full-content code {
-    padding: 0 5px 2px;
+    padding: 8px;
     font-size: 0.8em;
     line-height: 1em;
     font-weight: 400!important;
-    background: var(--backgroundLighterColor);
+    background: var(--accentThreeColor);
     border-radius: 3px;
 }
 
@@ -1229,6 +1229,10 @@ Usage (In Ghost editor):
 
 .post-full-content pre code :not(span) {
     color: inherit;
+}
+
+code[class*="language-"], pre[class*="language-"] {
+    scrollbar-color: var(--primaryDarkColor) var(--primaryColor);
 }
 
 .post-full-content .fluid-width-video-wrapper {
@@ -3044,7 +3048,7 @@ Usage (In Ghost editor):
 
     .post-full-content code {
         color: var(--textLightColor);
-        background: var(--black);
+        background: var(--accentThreeColor);
     }
 
     hr {
