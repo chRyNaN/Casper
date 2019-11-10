@@ -2442,12 +2442,86 @@ Usage (In Ghost editor):
     color: var(--primaryColor);
 }
 
+.connect-link-container {
+    padding: 20px;
+    width: 100%;
+}
+
 .connect-link {
     text-decoration: none;
+    box-shadow: none !important;
 }
 
 .connect-link-icon {
     padding-right: 20px;
+}
+
+.connect-form {
+    width: 100%;
+}
+
+.connect-form div {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.connect-form button {
+    display: inline-block;
+    padding: 0 25px;
+    height: 52px;
+    outline: none;
+    color: var(--textLightColor);
+    font-size: 1.7rem;
+    line-height: 38px;
+    font-weight: 400;
+    text-align: center;
+    background: var(--accentTwoColor);
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.connect-form button:active,
+.connect-form button:focus {
+    background: var(--accentTwoFocusedColor);
+}
+
+.connect-form input,
+.connect-form textarea {
+    padding: 14px 20px;
+    border: none;
+    color: var(--textDarkColor);
+    font-size: 2rem;
+    line-height: 1em;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    user-select: text;
+    border-radius: 8px;
+    transition: border-color 0.15s linear;
+    border: color(var(--accentTwoColor)) 1px solid;
+    width: 100%;
+    display: block;
+    margin-top: 10px;
+
+    -webkit-appearance: none;
+}
+
+.connect-form input:focus,
+.connect-form textarea:focus {
+    outline: 0;
+    border-color: var(--accentTwoFocusedColor);
+}
+
+.connect-form input:required,
+.connect-form textarea:required {
+    border-left-color: var(--accentThreeColor);
+}
+
+.connect-form input:invalid,
+.connect-form textarea:invalid {
+    border-color: var(--errorColor);
 }
 
 @media (max-width: 500px) {
@@ -3068,5 +3142,17 @@ Usage (In Ghost editor):
 
     .subscribe-overlay .subscribe-email {
         color: var(--textLightColor);
+    }
+
+    .connect-form input,
+    .connect-form textarea {
+        border-color: var(--accentTwoColor);
+        color: var(--textLightColor);
+        background: var(--primaryColor);
+    }
+
+    .connect-form input:focus,
+    .connect-form textarea:focus {
+        border-color: var(--accentTwoFocusedColor);
     }
 }
