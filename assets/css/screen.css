@@ -1798,7 +1798,7 @@ code[class*="language-"], pre[class*="language-"] {
 .subscribe-form .error .message-error {
     margin: 1em auto 0;
     max-width: 400px;
-    color: var(--accentTwoFocusedColor);
+    color: var(--errorColor);
     font-size: 1.6rem;
     line-height: 1.5em;
     text-align: center;
@@ -3137,11 +3137,11 @@ code[class*="language-"], pre[class*="language-"] {
 
     .subscribe-form .invalid .message-error,
     .subscribe-form .error .message-error {
-        color: color(var(--accentTwoFocusedColor) l(+5%) s(-5%));
+        color: var(--errorColor);
     }
 
     .subscribe-form .success .message-success {
-        color: color(var(--accentThreeColor) l(+5%) s(-5%));
+        color: var(--successColor);
     }
 
     .subscribe-overlay .subscribe-email {
