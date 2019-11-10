@@ -2442,6 +2442,14 @@ Usage (In Ghost editor):
     color: var(--primaryColor);
 }
 
+.connect-link {
+    text-decoration: none;
+}
+
+.connect-link-icon {
+    padding-right: 20px;
+}
+
 @media (max-width: 500px) {
     .author-header {
         padding: 10px 0 0;
