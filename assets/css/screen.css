@@ -2399,7 +2399,7 @@ code[class*="language-"], pre[class*="language-"] {
 }
 
 .no-image .author-header-content .author-bio {
-    color: var(--primaryColor);
+    color: var(--textDarkColor);
     opacity: 1.0;
 }
 
@@ -2936,6 +2936,10 @@ code[class*="language-"], pre[class*="language-"] {
     .no-image .author-header-content .author-meta {
         color: var(--textLightSecondaryColor);
         opacity: 1.0;
+    }
+
+    .no-image .author-header-content .author-bio {
+        color: var(--textLightSecondaryColor);
     }
 
     .author-profile-image {
