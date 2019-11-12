@@ -2408,7 +2408,7 @@ Usage (In Ghost editor):
 }
 
 .no-image .author-header-content .author-bio {
-    color: var(--primaryColor);
+    color: var(--textDarkColor);
     opacity: 1.0;
 }
 
@@ -2938,6 +2938,15 @@ Usage (In Ghost editor):
     .post-card,
     .post-card:hover {
         border-bottom-color: color(var(--primaryDarkColor) l(+8%));
+    }
+
+    .no-image .author-header-content .author-meta {
+        color: var(--textLightSecondaryColor);
+        opacity: 1.0;
+    }
+
+    .no-image .author-header-content .author-bio {
+        color: var(--textLightSecondaryColor);
     }
 
     .author-profile-image {
