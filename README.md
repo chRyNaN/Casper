@@ -1,3 +1,6 @@
+# chrynan-codes-theme
+This is a Theme for a [Ghost](https://ghost.org/) website. This is the Theme that is used on [chrynan.codes](https://chrynan.codes). This repository was forked and adapted from Ghost's Casper Theme and the rest of the README file is from that repository.
+
 # Casper
 
 The default theme for [Ghost](http://github.com/tryghost/ghost/). This is the latest development version of Casper! If you're just looking to download the latest release, head over to the [releases](https://github.com/TryGhost/Casper/releases) page.
