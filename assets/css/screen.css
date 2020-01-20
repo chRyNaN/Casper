@@ -3240,4 +3240,9 @@ code[class*="language-"], pre[class*="language-"] {
     .promo-title {
         color: rgba(255, 255, 255, 0.9);
     }
+
+    .kg-bookmark-card {
+        width: 100%;
+        background: var(--primaryDarkColor)
+    }
 }
