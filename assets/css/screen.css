@@ -1230,12 +1230,12 @@ Usage (In Ghost editor):
     line-height: 1em;
     font-weight: 400!important;
     color: var(--textLightColor);
-    background: var(--accentThreeColor);
+    background: var(--backgroundDarkestColor);
     border-radius: 3px;
 }
 
 .post-full-content p code {
-    word-break: break-all;
+    word-break: break-word;
 }
 
 .post-full-content pre {
@@ -1267,6 +1267,7 @@ Usage (In Ghost editor):
 }
 
 code[class*="language-"], pre[class*="language-"] {
+    background-color: color(var(--primaryDarkColor) l(-5%)) !important;
     scrollbar-color: var(--primaryDarkColor) var(--primaryColor);
 }
 
@@ -3121,7 +3122,7 @@ code[class*="language-"], pre[class*="language-"] {
 
     .post-full-content code {
         color: var(--textLightColor);
-        background: var(--accentThreeColor);
+        background: color(var(--primaryDarkColor) l(-5%));
     }
 
     hr {
